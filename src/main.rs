@@ -1,15 +1,24 @@
+use std::env::current_dir;
+
 use askama::Template;
 use axum::{routing::get, Router};
+use tokio::net::TcpListener;
+use tower_http::services::ServeDir;
 
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt::init();
+    let assets_path = current_dir().unwrap();
     let app = Router::new()
         // `GET /` goes to `root`
         .route("/", get(hello))
-        .route("/click", get(click));
+        .route("/click", get(click))
+        .nest_service(
+            "/assets",
+            ServeDir::new(format!("{}/assets", assets_path.to_str().unwrap())),
+        );
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 

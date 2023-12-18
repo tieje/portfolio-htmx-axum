@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-htmx-axum",
+  "version": "0.1.0",
+  "license": "LGPL-3.0-or-later",
+  "author": {
+    "name": "Thomas Francis",
+    "email": "toj320@gmail.com",
+    "url": "https://thomasjamesfrancis.com"
+  },
+  "scripts": {
+    "format": "prettier --write --ignore-unknown .",
+    "build": "prettier --write --ignore-unknown . && npx tailwindcss -i ./styles/tailwind.css -o ./assets/main.css"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.3.6"
+  }
+}
