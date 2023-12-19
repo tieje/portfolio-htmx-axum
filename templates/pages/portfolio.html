@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %} {% block title %}Portfolio{% endblock %} {%
+block content %}
+<body class="h-screen overflow-hidden bg-blue-300">
+  <div class="h-screen snap-y snap-mandatory overflow-y-scroll">
+    {% include "components/portfolio/title.html" %} {% include
+    "components/portfolio/page.html" %}
+  </div>
+</body>
+{% endblock %}

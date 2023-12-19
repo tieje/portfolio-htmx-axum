@@ -11,7 +11,8 @@ async fn main() {
     let assets_path = current_dir().unwrap();
     let app = Router::new()
         // `GET /` goes to `root`
-        .route("/", get(hello))
+        .route("/", get(home))
+        .route("/portfolio", get(portfolio))
         .route("/click", get(click))
         .nest_service(
             "/assets",
@@ -23,16 +24,30 @@ async fn main() {
 }
 
 #[derive(Template)]
+#[template(path = "pages/portfolio.html")]
+struct PortfolioTemplate;
+
+async fn portfolio() -> PortfolioTemplate {
+    PortfolioTemplate {}
+}
+#[derive(Template)]
+#[template(path = "pages/home.html")]
+struct HomeTemplate;
+async fn home() -> HomeTemplate {
+    HomeTemplate {}
+}
+
+#[derive(Template)]
 #[template(path = "pages/hello.html")]
 struct HelloTemplate;
+async fn hello() -> HelloTemplate {
+    HelloTemplate {}
+}
 
 #[derive(Template)]
 #[template(path = "pages/click.html")]
 struct ClickTemplate;
-
-async fn hello() -> HelloTemplate {
-    HelloTemplate {}
-}
 async fn click() -> ClickTemplate {
     ClickTemplate {}
 }
+
