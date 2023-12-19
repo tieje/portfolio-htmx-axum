@@ -1,9 +1,14 @@
-{% extends "layouts/base.html" %} {% block title %}Portfolio{% endblock %} {%
-block content %}
+{% extends "layouts/base.html" %}
+<!-- prettier-ignore -->
+{% block title %}Portfolio{% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
 <body class="h-screen overflow-hidden bg-blue-300">
   <div class="h-screen snap-y snap-mandatory overflow-y-scroll">
-    {% include "components/portfolio/title.html" %} {% include
-    "components/portfolio/page.html" %}
+    {% include "components/portfolio/title.html" %}
+    <!-- prettier-ignore -->
+    {% include "components/portfolio/page.html" %}
   </div>
 </body>
 {% endblock %}
+

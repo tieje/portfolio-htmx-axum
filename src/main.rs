@@ -1,3 +1,5 @@
+pub mod portfolio;
+
 use std::env::current_dir;
 
 use askama::Template;
@@ -8,24 +10,20 @@ use tower_http::services::ServeDir;
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt::init();
-    let assets_path = current_dir().unwrap();
+    let assets_path = format!("{}/assets", current_dir().unwrap().to_str().unwrap());
     let app = Router::new()
-        // `GET /` goes to `root`
         .route("/", get(home))
         .route("/portfolio", get(portfolio))
         .route("/click", get(click))
-        .nest_service(
-            "/assets",
-            ServeDir::new(format!("{}/assets", assets_path.to_str().unwrap())),
-        );
+        .nest_service("/assets", ServeDir::new(assets_path));
 
     let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 
-#[derive(Template)]
+#[derive(Template, Debug)]
 #[template(path = "pages/portfolio.html")]
-struct PortfolioTemplate;
+struct PortfolioTemplate {};
 
 async fn portfolio() -> PortfolioTemplate {
     PortfolioTemplate {}
@@ -37,12 +35,12 @@ async fn home() -> HomeTemplate {
     HomeTemplate {}
 }
 
-#[derive(Template)]
-#[template(path = "pages/hello.html")]
-struct HelloTemplate;
-async fn hello() -> HelloTemplate {
-    HelloTemplate {}
-}
+// #[derive(Template)]
+// #[template(path = "pages/hello.html")]
+// struct HelloTemplate;
+// async fn hello() -> HelloTemplate {
+//     HelloTemplate {}
+// }
 
 #[derive(Template)]
 #[template(path = "pages/click.html")]
@@ -51,3 +49,19 @@ async fn click() -> ClickTemplate {
     ClickTemplate {}
 }
 
+#[cfg(test)]
+mod tests {
+    use octocrab::Octocrab;
+
+    #[tokio::test]
+    #[ignore = "works. No need to test"]
+    async fn get_repo() {
+        let pat = std::env::var("GITHUB_API_PAT").expect("Github PAT is missing");
+        let octocrab = Octocrab::builder().personal_token(pat).build().unwrap();
+        let repo = octocrab.repos("tieje", "portfolio-htmx-axum").get().await;
+        match repo {
+            Err(e) => println!("{}", e),
+            Ok(k) => println!("{:#?}", k.description.unwrap()),
+        }
+    }
+}
