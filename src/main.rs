@@ -4,6 +4,7 @@ use std::env::current_dir;
 
 use askama::Template;
 use axum::{routing::get, Router};
+use portfolio::{PortfolioTemplate, sync_portfolio_json, SyncTemplate};
 use tokio::net::TcpListener;
 use tower_http::services::ServeDir;
 
@@ -13,7 +14,8 @@ async fn main() {
     let assets_path = format!("{}/assets", current_dir().unwrap().to_str().unwrap());
     let app = Router::new()
         .route("/", get(home))
-        .route("/portfolio", get(portfolio))
+        .route("/portfolio", get(portfolio_handler))
+        .route("/sync", get(sync_handler))
         .route("/click", get(click))
         .nest_service("/assets", ServeDir::new(assets_path));
 
@@ -21,13 +23,14 @@ async fn main() {
     axum::serve(listener, app).await.unwrap();
 }
 
-#[derive(Template, Debug)]
-#[template(path = "pages/portfolio.html")]
-struct PortfolioTemplate {};
-
-async fn portfolio() -> PortfolioTemplate {
-    PortfolioTemplate {}
+async fn portfolio_handler() -> PortfolioTemplate {
+    PortfolioTemplate::new("data.json")
 }
+async fn sync_handler() -> SyncTemplate {
+    sync_portfolio_json().await;
+    SyncTemplate {}
+}
+
 #[derive(Template)]
 #[template(path = "pages/home.html")]
 struct HomeTemplate;

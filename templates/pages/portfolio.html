@@ -3,12 +3,17 @@
 {% block title %}Portfolio{% endblock %}
 <!-- prettier-ignore -->
 {% block content %}
+
 <body class="h-screen overflow-hidden bg-blue-300">
   <div class="h-screen snap-y snap-mandatory overflow-y-scroll">
+    <!-- prettier-ignore -->
     {% include "components/portfolio/title.html" %}
     <!-- prettier-ignore -->
-    {% include "components/portfolio/page.html" %}
+    {% for page in pages %}
+    <!-- prettier-ignore -->
+    {{ page|safe }}
+    <!-- prettier-ignore -->
+    {% endfor %}
   </div>
 </body>
 {% endblock %}
-

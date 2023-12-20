@@ -1,99 +1,212 @@
 {
-    "portfolio": [
-        {
-            "title": "Full Stack Developer",
-            "workplace": "Synergy Corporate Technologies",
-            "start_date": "Aug. 2022",
-            "end_date": "Nov. 2023",
-            "order": 9,
-            "is_github_project": false,
-            "description": "| Summary | Built Azure Functions and intranet site pages to solve problems for various clients and across varying projects and industries, ranging from intranet site building to querying Microsoft APIs and presenting the data to administrators |- Directly communicated with clients about technical wants and needs - Built the base of the frontend and worked on their proprietary ticketing system from scratch (React/Redux/CSS) - Great comprehension of CSS due to working extensively with a proprietary site builder",
-            "topics": [
-                "Client Communication",
-                "Azure",
-                "C#",
-                "CSS",
-                "React/Redux",
-                "TypeScript/JavaScript",
-                "SharePoint"
-            ]
-        },
-        {
-            "title": "Full Stack Developer",
-            "workplace": "MHK",
-            "start_date": "Sept. 2019",
-            "end_date": "Oct. 2020",
-            "order": 10,
-            "is_github_project": false,
-            "description": "| Summary | Wrote PL/SQL scripts to implement custom app configurations for clients | - Produced the company’s software installation with no prior experience nor help - Unique Contributions: Wrote and distributed python scripts to automate work - Automated bug reports and developed new Bug test processes for their new Web-based app",
-            "topics": [
-                "Client Communication",
-                "PL/SQL",
-                "Oracle",
-                "Python",
-                "Selenium",
-                "Jira"
-            ]
-        },
-        {
-            "title": "This Site",
-            "github_repo_name": "portfolio-htmx-axum",
-            "order": 19,
-            "is_github_project": true
-        },
-        {
-            "title": "rs_sec_edgar",
-            "github_repo_name": "rs_sec_edgar",
-            "order": 20,
-            "is_github_project": true
-        },
-        {
-            "title": "tieje.github.io",
-            "github_repo_name": "tieje.github.io",
-            "order": 30,
-            "is_github_project": true
-        },
-        {
-            "title": "portfolio-blog-fresh",
-            "github_repo_name": "portfolio-blog-fresh",
-            "order": 40,
-            "is_github_project": true
-        },
-        {
-            "title": "breadsauce",
-            "github_repo_name": "breadsauce",
-            "order": 50,
-            "is_github_project": true
-        },
-        {
-            "title": "skill-tree",
-            "github_repo_name": "skill-tree",
-            "order": 60,
-            "is_github_project": true
-        },
-        {
-            "title": "portfolio-gatsby",
-            "github_repo_name": "portfolio-gatsby",
-            "order": 70,
-            "is_github_project": true
-        },
-        {
-            "title": "semblance",
-            "github_repo_name": "semblance",
-            "order": 80,
-            "is_github_project": true
-        },
-        {
-            "title": "csharp-trading-bot",
-            "github_repo_name": "csharp-trading-bot",
-            "order": 90,
-            "is_github_project": true
-        },
-        {
-            "title": "simple-lead-generator",
-            "github_repo_name": "simple-lead-generator",
-            "order": 100,
-            "is_github_project": true
-        }
-    ]
+  "pages": [
+    {
+      "title": "Full Stack Developer",
+      "order": 9,
+      "is_github_project": false,
+      "github_repo_name": "",
+      "description": "| Summary | Built Azure Functions and intranet site pages to solve problems for various clients and across varying projects and industries, ranging from intranet site building to querying Microsoft APIs and presenting the data to administrators |- Directly communicated with clients about technical wants and needs - Built the base of the frontend and worked on their proprietary ticketing system from scratch (React/Redux/CSS) - Great comprehension of CSS due to working extensively with a proprietary site builder",
+      "project_url": "",
+      "github_url": "",
+      "topics": [
+        "Client Communication",
+        "Azure",
+        "C#",
+        "CSS",
+        "React/Redux",
+        "TypeScript/JavaScript",
+        "SharePoint"
+      ],
+      "workplace": "Synergy Corporate Technologies",
+      "start_date": "Aug. 2022",
+      "end_date": "Nov. 2023"
+    },
+    {
+      "title": "Application Support Analyst",
+      "order": 10,
+      "is_github_project": false,
+      "github_repo_name": "",
+      "description": "| Summary | Wrote PL/SQL scripts to implement custom app configurations for clients | - Produced the company’s software installation with no prior experience nor help - Unique Contributions: Wrote and distributed python scripts to automate work - Automated bug reports and developed new Bug test processes for their new Web-based app",
+      "project_url": "",
+      "github_url": "",
+      "topics": [
+        "Client Communication",
+        "PL/SQL",
+        "Oracle",
+        "Python",
+        "Selenium",
+        "Jira"
+      ],
+      "workplace": "MHK",
+      "start_date": "Sept. 2019",
+      "end_date": "Oct. 2020"
+    },
+    {
+      "title": "This Site",
+      "order": 19,
+      "is_github_project": true,
+      "github_repo_name": "portfolio-htmx-axum",
+      "description": "Hopefully, the last portfolio site I'll ever build.",
+      "project_url": "https://api.github.com/repos/tieje/portfolio-htmx-axum",
+      "github_url": "git://github.com/tieje/portfolio-htmx-axum.git",
+      "topics": ["axum", "css", "html", "htmx", "rust"],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "rs_sec_edgar",
+      "order": 20,
+      "is_github_project": true,
+      "github_repo_name": "rs_sec_edgar",
+      "description": "A small library for querying the SEC's EDGAR written in Rust.",
+      "project_url": "https://api.github.com/repos/tieje/rs_sec_edgar",
+      "github_url": "git://github.com/tieje/rs_sec_edgar.git",
+      "topics": ["edgar", "rust", "sec"],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "tieje.github.io",
+      "order": 30,
+      "is_github_project": true,
+      "github_repo_name": "tieje.github.io",
+      "description": "My current portfolio and blog site.",
+      "project_url": "https://api.github.com/repos/tieje/tieje.github.io",
+      "github_url": "git://github.com/tieje/tieje.github.io.git",
+      "topics": [],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "portfolio-blog-fresh",
+      "order": 40,
+      "is_github_project": true,
+      "github_repo_name": "portfolio-blog-fresh",
+      "description": "My current portfolio website.",
+      "project_url": "https://api.github.com/repos/tieje/portfolio-blog-fresh",
+      "github_url": "git://github.com/tieje/portfolio-blog-fresh.git",
+      "topics": [
+        "animxyz",
+        "deno",
+        "deno-deploy",
+        "fresh",
+        "twind",
+        "typescript"
+      ],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "breadsauce",
+      "order": 50,
+      "is_github_project": true,
+      "github_repo_name": "breadsauce",
+      "description": "Here, I get to show off my animation skills as well as try new tech like the Vite bundler. Vite is ridiculously fast compared to webpack.",
+      "project_url": "https://api.github.com/repos/tieje/breadsauce",
+      "github_url": "git://github.com/tieje/breadsauce.git",
+      "topics": ["react-spring", "reactjs", "tailwindcss", "vite", "yarn"],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "skill-tree",
+      "order": 60,
+      "is_github_project": true,
+      "github_repo_name": "skill-tree",
+      "description": "An MVP of an SPA where teachers can create skill trees for students. The application is not complete. In the complete version, teachers would be able to receive feedback from their students about how confident they feel about a topic, among many other features. When it comes to making education more student-centered, I believe a step in the right direction is to make it a more fun game to play through the use of skill trees.",
+      "project_url": "https://api.github.com/repos/tieje/skill-tree",
+      "github_url": "git://github.com/tieje/skill-tree.git",
+      "topics": [
+        "django-rest-framework",
+        "docker-swarm",
+        "postgresql",
+        "reactjs",
+        "redux",
+        "rtk",
+        "rtk-query",
+        "tailwindcss"
+      ],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "portfolio-gatsby",
+      "order": 70,
+      "is_github_project": true,
+      "github_repo_name": "portfolio-gatsby",
+      "description": "This project is my portfolio built with Gatsby static site generator. This site was meant to get a portfolio site running ASAP. I'll be building my next portfolio/blog with the Fresh framework.",
+      "project_url": "https://api.github.com/repos/tieje/portfolio-gatsby",
+      "github_url": "git://github.com/tieje/portfolio-gatsby.git",
+      "topics": [
+        "figma",
+        "gatsby-cloud",
+        "gatsbyjs",
+        "graphql",
+        "html5",
+        "tailwindcss",
+        "typescript"
+      ],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "semblance",
+      "order": 80,
+      "is_github_project": true,
+      "github_repo_name": "semblance",
+      "description": "The purpose of this project was to encourage people to meet others locally, in-person through the gamification of story archetypes and narrative choices. Although I learned a lot, I am no longer interested in completing this project.",
+      "project_url": "https://api.github.com/repos/tieje/semblance",
+      "github_url": "git://github.com/tieje/semblance.git",
+      "topics": [
+        "apollo",
+        "django-rest-framework",
+        "docker-swarm",
+        "graphql",
+        "postgresql",
+        "reactjs"
+      ],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "csharp-trading-bot",
+      "order": 90,
+      "is_github_project": true,
+      "github_repo_name": "csharp-trading-bot",
+      "description": "A simple trading bot that can handle multiple algorithms at the same time. I have only coded one algorithm for now, but I intend to build upon this in the future.",
+      "project_url": "https://api.github.com/repos/tieje/csharp-trading-bot",
+      "github_url": "git://github.com/tieje/csharp-trading-bot.git",
+      "topics": [
+        "academic-research",
+        "alpaca-trading-api",
+        "csharp",
+        "selenium",
+        "sqlite"
+      ],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    },
+    {
+      "title": "simple-lead-generator",
+      "order": 100,
+      "is_github_project": true,
+      "github_repo_name": "simple-lead-generator",
+      "description": "The purpose of this script is to provide a GUI for scraping emails, phone numbers, and contact urls from the top result of duckduckgo from a list of business names in an excel sheet.",
+      "project_url": "https://api.github.com/repos/tieje/Simple-Lead-Generator",
+      "github_url": "git://github.com/tieje/Simple-Lead-Generator.git",
+      "topics": ["pysimplegui", "python3", "selenium", "xlwings"],
+      "workplace": "",
+      "start_date": "",
+      "end_date": ""
+    }
+  ]
 }
