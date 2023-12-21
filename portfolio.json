@@ -5,7 +5,7 @@
       "start_date": "Dec. 2023",
       "order": 8,
       "is_github_project": false,
-      "description": "This badge certifies that I am knowledgeable about the following AWS Services and their best practices. As someone who used to self-host sites on a Raspberry PI with Docker Swarm, I have a deep appreciation for the simplification of app deployment, development, and security with AWS. In terms of difficulty, this an intermediate certificate: one step above an AWS Cloud Practitioner.",
+      "description": "This badge certifies that I am knowledgeable about dev-related AWS Services and their best practices. As someone who used to self-host sites on a Raspberry Pi with Docker Swarm, I have a deep appreciation for the simplification of app deployment, development, and security with AWS. In terms of difficulty, this an intermediate certificate: one step above an AWS Cloud Practitioner.",
       "topics": [
         "AWS",
         "EC2",
@@ -29,7 +29,7 @@
         "Security Policies, IAM",
         "Cognito"
       ],
-      "image_url": "https://images.credly.com/size/680x680/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+      "image_url": "/assets/aws-badge.png",
       "project_url": "https://www.credly.com/badges/a74d35dd-36ff-4272-9d72-b1cf6a6360f5/public_url"
     },
     {
@@ -39,14 +39,18 @@
       "end_date": "Nov. 2023",
       "order": 9,
       "is_github_project": false,
-      "description": "| Summary | Built Azure Functions and intranet site pages to solve problems for various clients and across varying projects and industries, ranging from intranet site building to querying Microsoft APIs and presenting the data to administrators |- Directly communicated with clients about technical wants and needs - Built the base of the frontend and worked on their proprietary ticketing system from scratch (React/Redux/CSS) - Great comprehension of CSS due to working extensively with a proprietary site builder",
+      "description": "In this role, I provided direct consultation for various clients from small businesses to mid-sized corporations across industries such as shipping, medicine, and banking. Specifically, I have built SharePoint intranets, Azure functions, Microsoft Flows, a custom web app to work around an Azure limitation, and the frontend base (React/Redux) of Synergy's proprietary ticketing system. In addition, I maintained Azure functions, React sites, C# Web Site projects, and MSSQL Server databases.",
       "topics": [
         "Client Communication",
         "Azure",
         "C#",
         "CSS",
-        "React/Redux",
-        "TypeScript/JavaScript",
+        "HTML",
+        "React",
+        "Redux",
+        "Express",
+        "TypeScript",
+        "JavaScript",
         "SharePoint"
       ],
       "image_url": ""
@@ -54,6 +58,7 @@
     {
       "title": "SEC EDGAR Rust API",
       "github_repo_name": "rs_sec_edgar",
+      "description": "This was the first time I ever created a production-level open-source library intended for public use. It's original purpose was to support my personal stock trading bot. I had a great experience learning Rust and I'd like to continue using it in the future.",
       "order": 10,
       "is_github_project": true
     },
@@ -64,11 +69,11 @@
       "end_date": "Oct. 2020",
       "order": 20,
       "is_github_project": false,
-      "description": "| Summary | Wrote PL/SQL scripts to implement custom app configurations for clients | - Produced the company’s software installation with no prior experience nor help - Unique Contributions: Wrote and distributed python scripts to automate work - Automated bug reports and developed new Bug test processes for their new Web-based app",
+      "description": "My primary role was to write PL/SQL scripts to implement custom app configurations for clients using MHK's proprietary healthcare platform. Upon revealing my skills in automated testing using Selenium and Python, I was put in charge of setting up best practices in Jira on top of my normal responsibilities. Other laudable achievements include producing the company’s platform software installation with no prior experience nor help, writing and distributing python scripts to automate work, and automating bug reports to clients.",
       "topics": [
         "Client Communication",
         "PL/SQL",
-        "Oracle",
+        "Oracle db",
         "Python",
         "Selenium",
         "Jira"
@@ -82,25 +87,21 @@
       "is_github_project": true
     },
     {
-      "title": "Portfolio/Blog site version 3 - This Site",
+      "title": "Portfolio/Blog site version 3",
       "github_repo_name": "portfolio-htmx-axum",
-      "order": 61,
+      "order": 65,
+      "description": "I thoroughly enjoyed building this project with the comfort knowing that if I ever need to extend functionality of this site, I can always do so with HTMX. I call it the HAAx framework: HTMX for API calls, Askama for HTML templating, and Axum for a Rust API.",
       "is_github_project": true
     },
     {
       "title": "Portfolio/Blog site version 2",
-      "github_repo_name": "tieje.github.io",
-      "order": 65,
-      "is_github_project": true
-    },
-    {
-      "title": "Portfolio/Blog site version 1",
       "github_repo_name": "portfolio-blog-fresh",
       "order": 68,
-      "is_github_project": true
+      "is_github_project": true,
+      "description": "The concepts I learned while using Fresh did in fact help me land my first tech job. This is because Fresh was so new that it did not have the simplified abstractions that React had so I had to figure out more of the JavaScript myself."
     },
     {
-      "title": "Portfolio/Blog Site version 0.1",
+      "title": "Portfolio/Blog Site version 1",
       "github_repo_name": "portfolio-gatsby",
       "order": 70,
       "is_github_project": true
@@ -112,7 +113,7 @@
       "is_github_project": true
     },
     {
-      "title": "breadsauce - my wedding site",
+      "title": "breadsauce",
       "github_repo_name": "breadsauce",
       "order": 85,
       "is_github_project": true
@@ -121,13 +122,15 @@
       "title": "C# Trading Bot",
       "github_repo_name": "csharp-trading-bot",
       "order": 90,
-      "is_github_project": true
+      "is_github_project": true,
+      "description": "This was my first foray into the C# language. C# is a very easy language to pick up. It's no wonder why it's so loved and used. Funny story, before I stopped running the bot, I discovered that it made my paper-trading account go up 21%. T_T"
     },
     {
       "title": "Simple Lead Generator",
       "github_repo_name": "simple-lead-generator",
       "order": 100,
-      "is_github_project": true
+      "is_github_project": true,
+      "description": "The motivation for building this was actually because it was part of a business deal. The deal didn't go through and the Python code for this project is so messy that it makes me embarrassed to call myself a developer. But it works and I love it. 10/10 experience, I'd do it again."
     }
   ]
 }

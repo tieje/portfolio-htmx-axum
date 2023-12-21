@@ -15,8 +15,7 @@ impl Portfolio {
             .expect("could not open file")
             .read_to_string(&mut json_data)
             .expect("could not parse json");
-        let portfolio: Portfolio =
-            serde_json::from_str(&json_data).expect("could not parse json");
+        let portfolio: Portfolio = serde_json::from_str(&json_data).expect("could not parse json");
         portfolio
     }
     async fn merge_repo_data(mut self) -> Self {
@@ -30,11 +29,18 @@ impl Portfolio {
                     .get()
                     .await
                     .expect("Querying Github repo failed");
-                page.description = repo.description;
+                page.description = Some(format!(
+                    "{} {}",
+                    repo.description.unwrap_or_default(),
+                    page.description.clone().unwrap_or_default()
+                ));
                 page.project_url = Some(repo.homepage.unwrap_or_default());
                 page.topics = repo.topics;
                 page.github_url = Some(repo.html_url.unwrap().to_string());
-                page.image_url = Some(format!("/assets/{}.png", page.github_repo_name.clone().unwrap()));
+                page.image_url = Some(format!(
+                    "/assets/{}.png",
+                    page.github_repo_name.clone().unwrap()
+                ));
             }
         }
         self
@@ -71,8 +77,7 @@ pub async fn sync_portfolio_json() {
         .expect("could not open file")
         .read_to_string(&mut json_data)
         .expect("could not parse json");
-    let mut portfolio: Portfolio =
-        serde_json::from_str(&json_data).expect("could not parse json");
+    let mut portfolio: Portfolio = serde_json::from_str(&json_data).expect("could not parse json");
     portfolio.pages.sort_by_key(|item| item.order);
     let portfolio = portfolio.merge_repo_data().await;
     let file = File::create("data.json").expect("Failed to create file");
@@ -96,13 +101,14 @@ pub struct PortfolioPage {
     image_url: Option<String>,
 }
 
-#[derive(Template, Serialize, Debug)]
+#[derive(Template, Serialize, Debug, Default)]
 #[template(path = "pages/portfolio.html")]
 pub struct PortfolioTemplate {
+    // aws_badge_path: String,
     pages: Vec<PortfolioPageTemplate>,
 }
 
-#[derive(Template, Serialize, Debug)]
+#[derive(Template, Serialize, Debug, Default)]
 #[template(path = "components/portfolio/page.html")]
 pub struct PortfolioPageTemplate {
     title: String,

@@ -1,35 +1,29 @@
-<!--
-    title
-    is_github_project
-    github_repo_name
-    description
-    project_url
-    github_url
-    topics
-    workplace
-    start_date
-    end_date
--->
-
-<div class="grid h-screen snap-start place-content-center">
+<div class="grid h-screen min-h-[600px] snap-start place-content-center">
   <div class="md:w-[768px]">
     <div class="grid gap-[24px]">
       <h2
-        class="text-center text-4xl underline underline-offset-[24px] md:leading-[72px]"
+        class="text-center text-lg underline underline-offset-8 md:text-4xl md:leading-[72px] md:underline-offset-[24px]"
       >
         {{ title }}
       </h2>
       <!-- prettier-ignore -->
-      <h3 class="pb-[16px] text-center text-xl">
+      <h3 class="pb-[16px] text-center text-base md:text-xl">
         {% if workplace != "" %}
         {{ workplace }}
         {% endif %}
       </h3>
       <!-- prettier-ignore -->
     </div>
-    <div class="float-right mb-[12px] ml-[16px] grid w-[300px] gap-6">
-      <img class="" src="{{ image_url }}" width="300" />
-      <ul class="grid gap-4">
+    <div
+      class="grid w-full place-content-center gap-3 md:float-right md:mb-[12px] md:ml-[16px] md:w-[300px] md:place-content-start md:gap-6"
+    >
+      <img
+        class="w-[200px] justify-self-center md:w-[300px] md:justify-start"
+        src="{{ image_url }}"
+      />
+      <ul
+        class="flex flex-wrap place-content-center gap-6 md:grid md:place-content-start md:gap-4"
+      >
         <!-- prettier-ignore -->
         {% if start_date != "" %}
         <li>Start: {{ start_date }}</li>
@@ -48,7 +42,14 @@
             href="{{ project_url }}"
             target="_blank"
           >
+            <!-- prettier-ignore -->
+            {% if title == "AWS Certified Developer - Associate" %}
+            See Badge
+            <!-- prettier-ignore -->
+            {% else %}
             See Project
+            <!-- prettier-ignore -->
+            {% endif %}
           </a>
         </li>
         <!-- prettier-ignore -->
@@ -68,10 +69,10 @@
         {% endif %}
       </ul>
     </div>
-    <p class="p-5 pt-0">{{ description }}</p>
+    <p class="p-5 pr-2 md:p-5 md:pr-5 md:pt-0">{{ description }}</p>
     <!-- prettier-ignore -->
     {% if topics.len() != 0 %}
-    <ul class="flex flex-wrap gap-2 p-5 text-sm">
+    <ul class="hidden flex-wrap gap-2 p-5 text-sm md:flex">
       <!-- prettier-ignore -->
       {% for topic in topics %}
       <li class="border-2-white h-fit w-fit rounded-full border px-3 py-[2px]">

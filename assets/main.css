@@ -562,21 +562,9 @@ html{
   right: 0px;
 }
 
-.float-right {
-  float: right;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.mb-\[12px\] {
-  margin-bottom: 12px;
-}
-
-.ml-\[16px\] {
-  margin-left: 16px;
 }
 
 .block {
@@ -591,6 +579,10 @@ html{
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -600,8 +592,12 @@ html{
   height: 100vh;
 }
 
-.w-\[300px\] {
-  width: 300px;
+.min-h-\[600px\] {
+  min-height: 600px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .w-fit {
@@ -637,6 +633,10 @@ html{
   gap: 0.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -647,6 +647,10 @@ html{
 
 .gap-\[24px\] {
   gap: 24px;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-hidden {
@@ -693,8 +697,8 @@ html{
   padding-bottom: 16px;
 }
 
-.pt-0 {
-  padding-top: 0px;
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .text-center {
@@ -711,6 +715,11 @@ html{
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -719,11 +728,6 @@ html{
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-blue-300 {
@@ -744,8 +748,8 @@ html{
   text-underline-offset: 4px;
 }
 
-.underline-offset-\[24px\] {
-  text-underline-offset: 24px;
+.underline-offset-8 {
+  text-underline-offset: 8px;
 }
 
 .portfolio-word::before{
@@ -1800,9 +1804,33 @@ html{
     right: 2.5rem;
   }
 
+  .md\:float-right {
+    float: right;
+  }
+
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .md\:mb-\[12px\] {
+    margin-bottom: 12px;
+  }
+
+  .md\:ml-\[16px\] {
+    margin-left: 16px;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
   }
 
   .md\:w-\[768px\] {
@@ -1814,11 +1842,53 @@ html{
     width: fit-content;
   }
 
+  .md\:place-content-start {
+    place-content: start;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .md\:p-5 {
+    padding: 1.25rem;
+  }
+
+  .md\:pr-5 {
+    padding-right: 1.25rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
   .md\:text-left {
     text-align: left;
   }
 
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
   .md\:leading-\[72px\] {
     line-height: 72px;
+  }
+
+  .md\:underline-offset-\[24px\] {
+    text-underline-offset: 24px;
   }
 }
