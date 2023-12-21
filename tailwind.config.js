@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./templates/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'mono': ['Menlo'],
+      }
+    },
   },
   plugins: ["prettier-plugin-tailwindcss"],
 };

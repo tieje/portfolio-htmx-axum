@@ -9,7 +9,8 @@
   },
   "scripts": {
     "format": "prettier --write --ignore-unknown .",
-    "build": "prettier --write --ignore-unknown --cache . && npx tailwindcss -i ./styles/tailwind.css -o ./assets/main.css"
+    "style": "sass ./styles/base.scss ./styles/final.css -s compressed --no-source-map  && npx tailwindcss -i ./styles/final.css -o ./assets/main.css",
+    "build": "prettier --write --ignore-unknown --cache . && npm run style"
   },
   "devDependencies": {
     "prettier": "^3.1.1",

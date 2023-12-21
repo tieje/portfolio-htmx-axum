@@ -11,6 +11,9 @@ README.md
 /styles
 tailwind.config.js
 .prettierrc.cjs
+/.vscode
+data.json
+portfolio.json
 
 # testing
 

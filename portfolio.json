@@ -1,6 +1,37 @@
 {
   "pages": [
     {
+      "title": "AWS Certified Developer - Associate",
+      "start_date": "Dec. 2023",
+      "order": 8,
+      "is_github_project": false,
+      "description": "This badge certifies that I am knowledgeable about the following AWS Services and their best practices. As someone who used to self-host sites on a Raspberry PI with Docker Swarm, I have a deep appreciation for the simplification of app deployment, development, and security with AWS. In terms of difficulty, this an intermediate certificate: one step above an AWS Cloud Practitioner.",
+      "topics": [
+        "AWS",
+        "EC2",
+        "ECS/Fargate",
+        "Elasticache",
+        "CloudFront",
+        "BeanStalk",
+        "CloudFormation",
+        "SNS",
+        "SQS",
+        "SES",
+        "X-Ray",
+        "CloudWatch",
+        "Lambda",
+        "API Gateway",
+        "SAM",
+        "RDS",
+        "DynamoDB",
+        "S3",
+        "CodePipeline - CI/CD",
+        "Security Policies, IAM",
+        "Cognito"
+      ],
+      "image_url": "placeholder.png"
+    },
+    {
       "title": "Full Stack Developer",
       "workplace": "Synergy Corporate Technologies",
       "start_date": "Aug. 2022",
@@ -33,64 +64,65 @@
         "Python",
         "Selenium",
         "Jira"
-      ]
+      ],
+      "image_url": "placeholder.png"
     },
     {
-      "title": "This Site",
-      "github_repo_name": "portfolio-htmx-axum",
-      "order": 19,
-      "is_github_project": true
-    },
-    {
-      "title": "rs_sec_edgar",
+      "title": "SEC EDGAR Rust API",
       "github_repo_name": "rs_sec_edgar",
       "order": 20,
       "is_github_project": true
     },
     {
-      "title": "tieje.github.io",
-      "github_repo_name": "tieje.github.io",
-      "order": 30,
-      "is_github_project": true
-    },
-    {
-      "title": "portfolio-blog-fresh",
-      "github_repo_name": "portfolio-blog-fresh",
-      "order": 40,
-      "is_github_project": true
-    },
-    {
-      "title": "breadsauce",
-      "github_repo_name": "breadsauce",
-      "order": 50,
-      "is_github_project": true
-    },
-    {
-      "title": "skill-tree",
+      "title": "Project Skill Tree",
       "github_repo_name": "skill-tree",
       "order": 60,
       "is_github_project": true
     },
     {
-      "title": "portfolio-gatsby",
+      "title": "Portfolio/Blog site version 3 - This Site",
+      "github_repo_name": "portfolio-htmx-axum",
+      "order": 61,
+      "is_github_project": true
+    },
+    {
+      "title": "Portfolio/Blog site version 2",
+      "github_repo_name": "tieje.github.io",
+      "order": 65,
+      "is_github_project": true
+    },
+    {
+      "title": "Portfolio/Blog site version 1",
+      "github_repo_name": "portfolio-blog-fresh",
+      "order": 68,
+      "is_github_project": true
+    },
+    {
+      "title": "Portfolio/Blog Site version 0.1",
       "github_repo_name": "portfolio-gatsby",
       "order": 70,
       "is_github_project": true
     },
     {
-      "title": "semblance",
+      "title": "Project Semblance",
       "github_repo_name": "semblance",
       "order": 80,
       "is_github_project": true
     },
     {
-      "title": "csharp-trading-bot",
+      "title": "breadsauce - my wedding site",
+      "github_repo_name": "breadsauce",
+      "order": 85,
+      "is_github_project": true
+    },
+    {
+      "title": "C# Trading Bot",
       "github_repo_name": "csharp-trading-bot",
       "order": 90,
       "is_github_project": true
     },
     {
-      "title": "simple-lead-generator",
+      "title": "Simple Lead Generator",
       "github_repo_name": "simple-lead-generator",
       "order": 100,
       "is_github_project": true

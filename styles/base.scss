@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    html {
+        font-family: Menlo;
+        color: white;
+        background-color: #192719;
+    }
+}
+@import "./typed.css-master/typed.scss";
+
+.portfolio-word {
+    @include typed("Portfolio", "Pleased to meet you!", "Your IP address is...", "just kidding", "have a look around", null, (caret-width: .2ch, iterations: 1));
+}
