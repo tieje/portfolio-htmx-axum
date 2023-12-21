@@ -29,11 +29,12 @@
         "Security Policies, IAM",
         "Cognito"
       ],
-      "image_url": "placeholder.png"
+      "image_url": "https://images.credly.com/size/680x680/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+      "project_url": "https://www.credly.com/badges/a74d35dd-36ff-4272-9d72-b1cf6a6360f5/public_url"
     },
     {
       "title": "Full Stack Developer",
-      "workplace": "Synergy Corporate Technologies",
+      "workplace": "Synergy Corporate Technologies - Westport, CT",
       "start_date": "Aug. 2022",
       "end_date": "Nov. 2023",
       "order": 9,
@@ -47,14 +48,21 @@
         "React/Redux",
         "TypeScript/JavaScript",
         "SharePoint"
-      ]
+      ],
+      "image_url": ""
+    },
+    {
+      "title": "SEC EDGAR Rust API",
+      "github_repo_name": "rs_sec_edgar",
+      "order": 10,
+      "is_github_project": true
     },
     {
       "title": "Application Support Analyst",
-      "workplace": "MHK",
+      "workplace": "MHK - Madison, CT",
       "start_date": "Sept. 2019",
       "end_date": "Oct. 2020",
-      "order": 10,
+      "order": 20,
       "is_github_project": false,
       "description": "| Summary | Wrote PL/SQL scripts to implement custom app configurations for clients | - Produced the company’s software installation with no prior experience nor help - Unique Contributions: Wrote and distributed python scripts to automate work - Automated bug reports and developed new Bug test processes for their new Web-based app",
       "topics": [
@@ -65,13 +73,7 @@
         "Selenium",
         "Jira"
       ],
-      "image_url": "placeholder.png"
-    },
-    {
-      "title": "SEC EDGAR Rust API",
-      "github_repo_name": "rs_sec_edgar",
-      "order": 20,
-      "is_github_project": true
+      "image_url": ""
     },
     {
       "title": "Project Skill Tree",

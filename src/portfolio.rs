@@ -31,9 +31,9 @@ impl Portfolio {
                     .await
                     .expect("Querying Github repo failed");
                 page.description = repo.description;
-                page.project_url = Some(repo.url.as_str().to_string());
+                page.project_url = Some(repo.homepage.unwrap_or_default());
                 page.topics = repo.topics;
-                page.github_url = Some(repo.git_url.unwrap().as_str().to_string());
+                page.github_url = Some(repo.html_url.unwrap().to_string());
                 page.image_url = Some(format!("/assets/{}.png", page.github_repo_name.clone().unwrap()));
             }
         }
@@ -96,13 +96,13 @@ pub struct PortfolioPage {
     image_url: Option<String>,
 }
 
-#[derive(Template, Default, Serialize, Debug)]
+#[derive(Template, Serialize, Debug)]
 #[template(path = "pages/portfolio.html")]
 pub struct PortfolioTemplate {
     pages: Vec<PortfolioPageTemplate>,
 }
 
-#[derive(Template, Default, Serialize, Debug)]
+#[derive(Template, Serialize, Debug)]
 #[template(path = "components/portfolio/page.html")]
 pub struct PortfolioPageTemplate {
     title: String,
@@ -136,7 +136,7 @@ mod tests {
         dbg!(portfolio.serialize());
     }
     #[tokio::test]
-    // #[ignore = "sync only when desired"]
+    #[ignore = "sync only when desired"]
     async fn push_portfolio_json_to_data_json() {
         sync_portfolio_json().await;
     }

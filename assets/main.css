@@ -562,21 +562,51 @@ html{
   right: 0px;
 }
 
+.float-right {
+  float: right;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-\[12px\] {
+  margin-bottom: 12px;
+}
+
+.ml-\[16px\] {
+  margin-left: 16px;
 }
 
 .block {
   display: block;
 }
 
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-screen {
   height: 100vh;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full {
@@ -595,8 +625,28 @@ html{
   scroll-snap-align: start;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .place-content-center {
   place-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-\[24px\] {
+  gap: 24px;
 }
 
 .overflow-hidden {
@@ -605,6 +655,10 @@ html{
 
 .overflow-y-scroll {
   overflow-y: scroll;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .border {
@@ -619,6 +673,28 @@ html{
 .bg-blue-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-\[2px\] {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.pb-\[16px\] {
+  padding-bottom: 16px;
+}
+
+.pt-0 {
+  padding-top: 0px;
 }
 
 .text-center {
@@ -640,9 +716,36 @@ html{
   line-height: 1.75rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-blue-300 {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.underline-offset-\[24px\] {
+  text-underline-offset: 24px;
 }
 
 .portfolio-word::before{
@@ -1702,6 +1805,10 @@ html{
     margin-right: 0px;
   }
 
+  .md\:w-\[768px\] {
+    width: 768px;
+  }
+
   .md\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
@@ -1709,5 +1816,9 @@ html{
 
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:leading-\[72px\] {
+    line-height: 72px;
   }
 }
