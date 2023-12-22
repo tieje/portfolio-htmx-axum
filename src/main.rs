@@ -17,7 +17,8 @@ async fn main() {
         .route("/sync", get(sync_handler))
         .nest_service("/assets", ServeDir::new(assets_path));
 
-    let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    // let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let listener = TcpListener::bind("0.0.0.0:80").await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 
