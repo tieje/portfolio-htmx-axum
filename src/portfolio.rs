@@ -4,6 +4,8 @@ use askama::Template;
 use octocrab::Octocrab;
 use serde::{Deserialize, Serialize};
 
+use crate::utils::to_link;
+
 #[derive(Debug, Deserialize, Default, Clone)]
 pub struct Portfolio {
     pages: Vec<PortfolioPage>,
@@ -24,9 +26,9 @@ impl Portfolio {
             Err(_) => {
                 let mut res = String::new();
                 File::open("/run/secrets/my_secret")
-                .expect("could not open secrets")
-                .read_to_string(&mut res)
-                .expect("secret file missing");
+                    .expect("could not open secrets")
+                    .read_to_string(&mut res)
+                    .expect("secret file missing");
                 res
             }
         };
@@ -71,6 +73,10 @@ impl Portfolio {
                 workplace: page.workplace.clone().unwrap_or_default(),
                 start_date: page.start_date.clone().unwrap_or_default(),
                 end_date: page.end_date.clone().unwrap_or_default(),
+                link: to_link(
+                    page.title.clone(),
+                    page.workplace.clone().unwrap_or_default(),
+                ),
             };
             res.pages.push(new_page)
         }
@@ -133,6 +139,7 @@ pub struct PortfolioPageTemplate {
     start_date: String,
     end_date: String,
     image_url: String,
+    link: String,
 }
 
 #[cfg(test)]

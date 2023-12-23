@@ -1,11 +1,13 @@
 <div class="grid h-screen min-h-[600px] snap-start place-content-center">
   <div class="md:w-[768px]">
     <div class="grid gap-[24px]">
-      <h2
+      <a
         class="text-center text-lg underline underline-offset-8 md:text-4xl md:leading-[72px] md:underline-offset-[24px]"
+        href="#{{ link }}"
+        alt="{{ title }}"
       >
-        {{ title }}
-      </h2>
+        <h2 id="{{ link }}">{{ title }}</h2>
+      </a>
       <!-- prettier-ignore -->
       <h3 class="pb-[16px] text-center text-base md:text-xl">
         {% if workplace != "" %}
@@ -17,10 +19,15 @@
     <div
       class="grid w-full place-content-center gap-3 md:float-right md:mb-[12px] md:ml-[16px] md:w-[300px] md:place-content-start md:gap-6"
     >
+      <!-- prettier-ignore -->
+      {% if image_url != "" %}
       <img
         class="w-[200px] justify-self-center md:w-[300px] md:justify-start"
+        alt="{{ title }} preview"
         src="{{ image_url }}"
       />
+      <!-- prettier-ignore -->
+      {% endif %}
       <ul
         class="flex flex-wrap place-content-center gap-6 md:grid md:place-content-start md:gap-4"
       >
@@ -40,6 +47,7 @@
           <a
             class="text-blue-300 underline underline-offset-4"
             href="{{ project_url }}"
+            alt="See project in a separate page for {{ title }}"
             target="_blank"
           >
             <!-- prettier-ignore -->
@@ -59,6 +67,7 @@
         <li>
           <a
             class="text-blue-300 underline underline-offset-4"
+            alt="See github in a separate page for {{ title }}"
             href="{{ github_url }}"
             target="_blank"
           >
@@ -69,7 +78,7 @@
         {% endif %}
       </ul>
     </div>
-    <p class="p-5 pr-2 md:p-5 md:pr-5 md:pt-0">{{ description }}</p>
+    <p class="p-5 pr-2 md:p-5 md:pr-5 md:pt-0">{{ description|safe }}</p>
     <!-- prettier-ignore -->
     {% if topics.len() != 0 %}
     <ul class="hidden flex-wrap gap-2 p-5 text-sm md:flex">

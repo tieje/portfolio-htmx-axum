@@ -1,4 +1,5 @@
 pub mod portfolio;
+pub mod utils;
 
 use std::env::current_dir;
 

@@ -5,7 +5,7 @@
       "start_date": "Dec. 2023",
       "order": 8,
       "is_github_project": false,
-      "description": "This badge certifies that I am knowledgeable about dev-related AWS Services and their best practices. As someone who used to self-host sites on a Raspberry Pi with Docker Swarm, I have a deep appreciation for the simplification of app deployment, development, and security with AWS. In terms of difficulty, this an intermediate certificate: one step above an AWS Cloud Practitioner.",
+      "description": "This badge certifies that I am knowledgeable about dev-related AWS Services and their best practices. As someone who used to self-host sites on a Raspberry Pi with Docker Swarm, I have a deep appreciation for the simplification of app deployment, development, and security with AWS. With my newly acquired skills, this portfolio site was deployed in AWS with an ALB and ECS Fargate. In terms of difficulty, this is an intermediate certificate: one step above an AWS Cloud Practitioner.",
       "topics": [
         "AWS",
         "EC2",
@@ -90,7 +90,7 @@
       "title": "Portfolio/Blog site version 3",
       "github_repo_name": "portfolio-htmx-axum",
       "order": 65,
-      "description": "I thoroughly enjoyed building this project with the comfort knowing that if I ever need to extend functionality of this site, I can always do so with HTMX. I call it the HAAx framework: HTMX for API calls, Askama for HTML templating, and Axum for a Rust API.",
+      "description": "I thoroughly enjoyed building this project with the comfort knowing that if I ever need to extend functionality of this site, I can always do so with HTMX. I call it the HAAx framework: HTMX for API calls, Askama for HTML templating, and Axum for a Rust API. This site was my first deployment in AWS using an ALB and ECS Fargate.",
       "is_github_project": true
     },
     {
