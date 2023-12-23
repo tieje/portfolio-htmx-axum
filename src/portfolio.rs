@@ -19,7 +19,17 @@ impl Portfolio {
         portfolio
     }
     async fn merge_repo_data(mut self) -> Self {
-        let pat = std::env::var("GITHUB_API_PAT").expect("Github PAT is missing");
+        let pat = match std::env::var("GITHUB_API_PAT") {
+            Ok(r) => r,
+            Err(_) => {
+                let mut res = String::new();
+                File::open("/run/secrets/my_secret")
+                .expect("could not open secrets")
+                .read_to_string(&mut res)
+                .expect("secret file missing");
+                res
+            }
+        };
         let octocrab = Octocrab::builder().personal_token(pat).build().unwrap();
         for page in self.pages.iter_mut() {
             if page.is_github_project && page.github_repo_name.is_some() {

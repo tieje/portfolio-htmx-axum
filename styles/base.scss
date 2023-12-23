@@ -11,5 +11,5 @@
 @import "./typed.css-master/typed.scss";
 
 .portfolio-word {
-    @include typed("Portfolio", "Pleased to meet you!", "Your IP address is...", "just kidding", "have a look around", null, (caret-width: .2ch, iterations: 1));
+    @include typed("Portfolio", "Pleased to meet you!", "have a look around", null, (caret-width: .2ch, iterations: 1));
 }
