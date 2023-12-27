@@ -89,7 +89,7 @@ impl Portfolio {
 pub struct SyncTemplate;
 pub async fn sync_portfolio_json() {
     let mut json_data = String::new();
-    let _ = File::open("portfolio.json")
+    let _ = File::open("data/portfolio.json")
         .expect("could not open file")
         .read_to_string(&mut json_data)
         .expect("could not parse json");
@@ -149,13 +149,13 @@ mod tests {
     #[test]
     #[ignore = "output is too long"]
     fn parse_local_json() {
-        let portfolio = Portfolio::new("data.json");
+        let portfolio = Portfolio::new("data/data.json");
         dbg!(portfolio);
     }
     #[test]
     #[ignore = "output is too long"]
     fn serialize_struct() {
-        let portfolio = Portfolio::new("data.json");
+        let portfolio = Portfolio::new("data/data.json");
         dbg!(portfolio.serialize());
     }
     #[tokio::test]

@@ -1,21 +1,24 @@
 pub mod portfolio;
 pub mod utils;
+pub mod blog;
 
 use std::env::current_dir;
 
 use axum::{routing::get, Router};
+use blog::blog_dir_handler;
 use portfolio::{sync_portfolio_json, Portfolio, PortfolioTemplate, SyncTemplate};
 use tokio::net::TcpListener;
 use tower_http::services::ServeDir;
 
 #[tokio::main]
 async fn main() {
-    tracing_subscriber::fmt::init();
+    // tracing_subscriber::fmt::init();
     let assets_path = format!("{}/assets", current_dir().unwrap().to_str().unwrap());
     let app = Router::new()
         .route("/", get(portfolio_handler))
         .route("/portfolio", get(portfolio_handler))
         .route("/sync", get(sync_handler))
+        .route("/entries", get(blog_dir_handler))
         .nest_service("/assets", ServeDir::new(assets_path));
 
     let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
@@ -23,7 +26,7 @@ async fn main() {
 }
 
 async fn portfolio_handler() -> PortfolioTemplate {
-    Portfolio::new("data.json").serialize()
+    Portfolio::new("data/data.json").serialize()
 }
 async fn sync_handler() -> SyncTemplate {
     sync_portfolio_json().await;

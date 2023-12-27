@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+<!-- prettier-ignore -->
+{% block title %}{{ Title }}{% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
+
+<body class="min-h-screen w-screen grid justify-center">
+    <article>
+        <header>
+            <h1>
+                {{ Title }}
+            </h1>
+            <time></time>
+        </header>
+        <p>
+            
+        </p>
+    </article>
+    {% include "components/blog/footer.html" %}
+</body>
+{% endblock %}
