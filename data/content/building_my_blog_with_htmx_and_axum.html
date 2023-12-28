@@ -1,7 +1,8 @@
 <div class="grid gap-4" data-prismjs-copy-timeout="500">
+  <h2 id="tldr"><a href="#tldr" alt="tldr">TL:DR;</a></h2>
   <p>
-    TL:DR; For those just looking for code on how to do it, below is a basic
-    hello world app with
+    Looking for code on how to get started? Below is a basic hello world app
+    with
     <span
       style="
         background: linear-gradient(
@@ -28,7 +29,7 @@
     >
   </p>
   <p><code>main.rs</code></p>
-  <pre style="width: 768px">
+  <pre>
     <code class="language-rust" data-prismjs-copy="Copy">
 use askama::Template;
 use axum::{extract::Path, routing::get, Router};
@@ -78,7 +79,7 @@ struct ClickTemplate;
         </code>
     </pre>
   <p><code>home.html</code></p>
-  <pre style="width: 768px">
+  <pre>
   <code class="language-markup" data-prismjs-copy="Copy">
 {% extends "layouts/base.html" %}
 {% block title %}Hello World{% endblock %}
@@ -104,7 +105,118 @@ crossorigin="anonymous"
   </code>
 </pre>
   <p>
-    With a solid example out of the way, I can get on with the tech stack...
-    tomorrow.
+    With a solid example out of the way, the rest of this article will focus on
+    the reasoning behind
+    <a href="#TheStack" alt="tech choices">tech choices</a> for the blog and
+    lastly the overall
+    <a href="#TheDeveloperExperience" alt="developer experience"
+      >developer experience</a
+    >.
+  </p>
+  <h2 id="TheStack"><a href="#TheStack" alt="The Stack">The Stack</a></h2>
+  <p>
+    I want this site to be the last portfolio/blog that I ever build for myself.
+    Which technologies do I choose to stand the test of time? HTML and Rust.
+    Granted, I don't actually run any HTMX for this site yet, but it's
+    comforting to know that if I ever wanted to create an interactive example
+    for this blog, I wouldn't need to use a JavaScript frontend. JavaScript
+    isn't terrible. I originally intended to build this site with Svelte and
+    Sveltekit. But the JS framework wars are still ongoing. Heck, I built my
+    last portfolio in Deno's Fresh framework. Frontend developers have been
+    pushed and pulled in every direction, but HTML has always been the clear
+    output. With all of the best frontend frameworks increasingly reaching
+    towards the backend using techniques like serving-side rendering and
+    hydration,
+    <a
+      href="https://youtu.be/NA5Fcgs_viU?t=221"
+      alt="The Truth About HTMX"
+      target="_blank"
+    >
+      HTMX takes the opposite approach by making it easy for backend developers
+      to work on the frontend.
+    </a>
+    Rather than synchronizing state between the frontend and the backend, state
+    only needs to be managed by the backend. The main advantage with this
+    approach is that it cuts down on code and complexity.
+  </p>
+  <p>
+    Why Rust? I think Rust is going to have an important place in the future of
+    development. Unfortunately, I don't believe one of those places is going to
+    be in frontend development. There are frontend Rust frameworks that try
+    their best such as Yew and Leptos, but I have found that some friction may
+    always exist between webassembly and JS. For Yew, in particular it's
+    sometimes necessary to dip into JS to get something done. Although the state
+    of frontend Rust feels unpolished, the backend is where Rust's language
+    features can truly shine. I won't gush over the language right now, but the
+    best part is that when Rust compiles, I have a good feeling that whatever I
+    wrote is going to work and if it doesn't there will be clear reason why.
+    This feeling is infectious and is likely what powers it's strong community.
+  </p>
+  <p>
+    Finally, below is a brief summary of the tech choices I made and why I made
+    them:
+  </p>
+  <p>
+    <u>Backend API</u>: Axum, because it's the most well-developed Rust API
+    framework.
+  </p>
+  <p>
+    <u>Database</u>: JSON. JSON?! I don't have a lot of content yet. I'm not
+    sure how long I'll be writing blog posts either. For ease of use, you can't
+    get any easier than JSON. In the future, I would like to try out Surrealdb.
+  </p>
+  <p>
+    <u>Templating Engine</u>: Askama: because they already had an
+    <code>axum-askama</code>
+    crate ready for easy integration with Axum.
+  </p>
+  <p>
+    <u>Deployment</u>: ECS Fargate. At the time of this writing, AWS has only
+    recently adopted Rust as a "fully" supported language. In other words,
+    Elastic Beanstalk still lacked support for Rust and getting my app to run on
+    an EC2 instance was still tedious. When all else fails, Docker will come to
+    your rescue. I once built custom images to serve an app on a Raspberry Pi
+    (this is difficult because the architecture for RPIs is often unsupported).
+    But that's a story for another day.
+  </p>
+  <h2 id="TheDeveloperExperience">
+    <a href="#TheDeveloperExperience" alt="The Developer Experience"
+      >The Developer Experience</a
+    >
+  </h2>
+  <p>
+    As someone who started with web development using React and Django, creating
+    simple frontend apps always felt like hitting a nail with a sledgehammer.
+    Django is understandably sledgehammer-ish because it provides tons of
+    functionality out of the box. To this day, if I needed to create a
+    production-ready web app ASAP, I would use Django. But React? React is
+    supposed to a library, not a framework. Unfortunately, it's a library that
+    adds wrappers on wrappers on wrappers and these wrappers are coming for your
+    whole frontend.
+  </p>
+  <p>
+    Enter HTMX, Askama, and Axum. I had a positive experience working these
+    technologies. When Rust compiles, you know something good is going to
+    happen. Templating with Askama is a breeze. HTMX is so simple to fit into an
+    app that I made the entire example app above in a single night.
+  </p>
+  <p>
+    There are tons of frameworks out there but there is a certain magic when you
+    build your own framework that you're proud of (or at the very least, being
+    able to choose the technologies and methodologies yourself) rather than
+    reaching for the framework-specific documentation and doing whatever needs
+    to be done in the exact way that it has been prescribed. While I near the
+    end of the bulk of this project, I'm starting feel that magic.
+  </p>
+  <p>
+    I'd like to call it the HAAx (Htmx, Askama, Axum) framework. Unfortunately,
+    there aren't many clear examples on how to get these technologies working
+    together, which is part of the reason why I wrote this article. And granted
+    you could replace Askama and Axum with your favorite templating engine and
+    Rust API framework, respectively. I'm glad I created this site with these
+    technologies. Long live the HAAx framework. Long live...
+    <span class="easter-egg"
+      >so I don't need to rebuild my portfolio/blog ever again.</span
+    >
   </p>
 </div>

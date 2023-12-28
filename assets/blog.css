@@ -1,0 +1,42 @@
+pre {
+    width: 100vw;
+}
+
+header, footer, p, h2, h3, h4, h5, h6 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+a:not(h2 > a) {
+    color: rgb(147 197 253);
+}
+
+/* a:hover:not(h2 > a) { */
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.easter-egg {
+    opacity: 0;
+}
+.easter-egg:hover {
+    color: rgb(239 68 68);
+    opacity: 1;
+}
+@media (min-width: 768px) {
+    pre {
+        width: 768px;
+    }
+    
+    header, footer, p, h2, h3, h4, h5, h6 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

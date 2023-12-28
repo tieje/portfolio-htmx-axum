@@ -2,14 +2,14 @@
 <!-- prettier-ignore -->
 {% block title %}Blog - Thomas Francis{% endblock %}
 <!-- prettier-ignore -->
-{% block description %}
+{% block head %}
 <meta name="description" content="Blog Posts by Thomas Francis" />
 <!-- prettier-ignore -->
 {% endblock %}
 <!-- prettier-ignore -->
 {% block content %}
 
-<body class="grid min-h-screen w-screen place-content-center">
+<body class="relative grid min-h-screen w-screen place-content-center">
   <ul>
     {% for entry in entries %}
     <!-- prettier-ignore -->
@@ -17,5 +17,13 @@
     <!-- prettier-ignore -->
     {% endfor %}
   </ul>
+  <a
+    href="/"
+    alt="Portfolio"
+    class="absolute right-10 top-10 text-xl text-blue-300 hover:underline hover:underline-offset-4 md:right-[110px] md:top-10 md:block md:text-2xl"
+    target="_blank"
+  >
+    Portfolio
+  </a>
 </body>
 {% endblock %}
