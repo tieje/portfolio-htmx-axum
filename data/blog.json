@@ -1,5 +1,18 @@
 {
-    "entries": {
-        "title": ""
+  "entries": [
+    {
+      "title": "Building My Blog with HTMX and Axum",
+      "time": "Dec. 27, 2023",
+      "tags": [
+        "HTMX",
+        "Askama",
+        "Axum",
+        "Rust",
+        "HTML",
+        "ECS Fargate",
+        "Docker"
+      ],
+      "file": "building_my_blog_with_htmx_and_axum"
     }
+  ]
 }

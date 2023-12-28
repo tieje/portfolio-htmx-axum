@@ -14,6 +14,10 @@ tailwind.config.js
 /.vscode
 data.json
 portfolio.json
+/.mypy_cache
+/data/*.json
+compose.yaml
+/scripts
 
 # testing
 

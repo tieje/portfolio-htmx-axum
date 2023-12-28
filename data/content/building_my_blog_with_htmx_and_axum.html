@@ -1,0 +1,110 @@
+<div class="grid gap-4" data-prismjs-copy-timeout="500">
+  <p>
+    TL:DR; For those just looking for code on how to do it, below is a basic
+    hello world app with
+    <span
+      style="
+        background: linear-gradient(
+          to right,
+          white,
+          pink,
+          red,
+          yellow,
+          orange,
+          brown
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+      "
+    >
+      colors</span
+    >. You can check out
+    <a
+      class="text-blue-300 hover:underline hover:underline-offset-4"
+      href="https://github.com/tieje/htmx-axum-hello-world"
+      target="_blank"
+      alt="htmx-axum-hello-world github example"
+      >the entire example on github.</a
+    >
+  </p>
+  <p><code>main.rs</code></p>
+  <pre style="width: 768px">
+    <code class="language-rust" data-prismjs-copy="Copy">
+use askama::Template;
+use axum::{extract::Path, routing::get, Router};
+use tokio::net::TcpListener;
+use tower_http::services::ServeDir;
+
+#[tokio::main]
+async fn main() {
+    // tracing_subscriber::fmt::init();
+    let assets_path = "./assets".to_string();
+    let app = Router::new()
+        .route("/", get(home_handler))
+        .route("/*key", get(hello_handler))
+        .route("/click", get(click_handler))
+        .nest_service("/assets", ServeDir::new(assets_path));
+
+    let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    axum::serve(listener, app).await.unwrap();
+}
+
+async fn home_handler() -> HomeTemplate {
+    HomeTemplate::new("Hello World".to_string())
+}
+
+async fn hello_handler(Path(key): Path&lt;String>) -> HomeTemplate {
+    HomeTemplate::new(format!("hello {}", key))
+}
+
+#[derive(Template)]
+#[template(path = "pages/home.html")]
+struct HomeTemplate {
+    greeting: String,
+}
+impl HomeTemplate {
+    fn new(greeting: String) -> Self {
+        Self { greeting }
+    }
+}
+
+async fn click_handler() -> ClickTemplate {
+    ClickTemplate
+}
+
+#[derive(Template)]
+#[template(path = "components/click.html")]
+struct ClickTemplate;
+        </code>
+    </pre>
+  <p><code>home.html</code></p>
+  <pre style="width: 768px">
+  <code class="language-markup" data-prismjs-copy="Copy">
+{% extends "layouts/base.html" %}
+{% block title %}Hello World{% endblock %}
+{% block head %}
+&lt;script
+src="https://unpkg.com/htmx.org@1.9.9"
+integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX"
+crossorigin="anonymous"
+>&lt;/script>
+{% endblock %}
+
+{% block content %}
+&lt;body>
+    &lt;p class="red">{{ greeting }}&lt;/p>
+    &lt;button
+      class="blue"
+      hx-get="/click"
+      hx-trigger="click"
+      hx-target="this"
+      hx-swap="innerHTML">Click me&lt;/button>
+&lt;/body>
+{% endblock %}
+  </code>
+</pre>
+  <p>
+    With a solid example out of the way, I can get on with the tech stack...
+    tomorrow.
+  </p>
+</div>

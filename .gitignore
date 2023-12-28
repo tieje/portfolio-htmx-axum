@@ -4,3 +4,5 @@ package-lock.json
 /.cargo
 secrets.txt
 /assets/main.css
+/.mypy_cache
+/scripts/target/

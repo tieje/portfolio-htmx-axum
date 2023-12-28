@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+<!-- prettier-ignore -->
+{% block title %}Blog - Thomas Francis{% endblock %}
+<!-- prettier-ignore -->
+{% block description %}
+<meta name="description" content="Blog Posts by Thomas Francis" />
+<!-- prettier-ignore -->
+{% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
+
+<body class="grid min-h-screen w-screen place-content-center">
+  <ul>
+    {% for entry in entries %}
+    <!-- prettier-ignore -->
+    {{ entry|safe }}
+    <!-- prettier-ignore -->
+    {% endfor %}
+  </ul>
+</body>
+{% endblock %}

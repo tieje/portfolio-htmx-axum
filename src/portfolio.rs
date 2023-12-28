@@ -1,10 +1,8 @@
-use std::{fs::File, io::Read};
-
+use crate::utils::to_portfolio_link;
 use askama::Template;
 use octocrab::Octocrab;
 use serde::{Deserialize, Serialize};
-
-use crate::utils::to_link;
+use std::{fs::File, io::Read};
 
 #[derive(Debug, Deserialize, Default, Clone)]
 pub struct Portfolio {
@@ -73,7 +71,7 @@ impl Portfolio {
                 workplace: page.workplace.clone().unwrap_or_default(),
                 start_date: page.start_date.clone().unwrap_or_default(),
                 end_date: page.end_date.clone().unwrap_or_default(),
-                link: to_link(
+                link: to_portfolio_link(
                     page.title.clone(),
                     page.workplace.clone().unwrap_or_default(),
                 ),
@@ -89,7 +87,7 @@ impl Portfolio {
 pub struct SyncTemplate;
 pub async fn sync_portfolio_json() {
     let mut json_data = String::new();
-    let _ = File::open("data/portfolio.json")
+    let _ = File::open("./data/portfolio.json")
         .expect("could not open file")
         .read_to_string(&mut json_data)
         .expect("could not parse json");
@@ -100,7 +98,6 @@ pub async fn sync_portfolio_json() {
     serde_json::to_writer(file, &portfolio.serialize()).expect("Failed to write to file");
 }
 
-#[allow(dead_code)]
 #[derive(Debug, Deserialize, Default, Clone)]
 pub struct PortfolioPage {
     title: String,
@@ -149,13 +146,13 @@ mod tests {
     #[test]
     #[ignore = "output is too long"]
     fn parse_local_json() {
-        let portfolio = Portfolio::new("data/data.json");
+        let portfolio = Portfolio::new("./data/data.json");
         dbg!(portfolio);
     }
     #[test]
     #[ignore = "output is too long"]
     fn serialize_struct() {
-        let portfolio = Portfolio::new("data/data.json");
+        let portfolio = Portfolio::new("./data/data.json");
         dbg!(portfolio.serialize());
     }
     #[tokio::test]

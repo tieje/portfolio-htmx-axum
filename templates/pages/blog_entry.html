@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+<!-- prettier-ignore -->
+{% block title %}{{ title }}{% endblock %}
+<!-- prettier-ignore -->
+{% block head %}
+<meta name="description" content="{{ tags }}" />
+<link href="/assets/prism.css" rel="stylesheet" />
+<script src="/assets/prism.js"></script>
+<!-- prettier-ignore -->
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block content %}
+
+<body class="grid min-h-screen w-screen justify-center gap-6">
+  <article class="mt-[64px] md:w-[768px]">
+    <header class="grid gap-6 pb-10">
+      <h1 class="text-4xl">{{ title }}</h1>
+      <time>{{ time }}</time>
+    </header>
+    {{ content|safe }}
+  </article>
+  {% include "components/blog_entry/footer.html" %}
+</body>
+{% endblock %}
