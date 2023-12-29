@@ -84,11 +84,9 @@ USER appuser
 COPY --from=build /bin/server /bin/
 COPY assets /assets
 COPY templates /templates
-COPY data.json /data.json
-COPY portfolio.json /portfolio.json
+COPY data /data
 
 # Expose the port that the application listens on.
-EXPOSE 80
 EXPOSE 3000
 
 # What the container should run when it is started.
